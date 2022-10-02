@@ -1,3 +1,13 @@
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+//  Mobile Game Development
+//  Game 2014 Assignment 1
+//  Run Princess, Run! By Sophia Kovalenko - 101333565
+//  This program contains the scripts for a simple mobile game still in development.
+//
+//  Last modified: October 2nd, 2022
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,11 +15,6 @@ using UnityEngine.SceneManagement;
 
 public class SceneNavigator : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
