@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8352473625880423271}
   - component: {fileID: 5027145800559494697}
+  - component: {fileID: 3400812936755434628}
   m_Layer: 0
   m_Name: BlueGemPrefab
   m_TagString: Untagged
@@ -84,3 +85,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3400812936755434628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2940109235255120953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a1ffba441b8e8549b722109fd6f3130, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scrollSpeed: 4
