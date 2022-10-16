@@ -34,6 +34,7 @@ public class GameManager : MonoBehaviour
     //Use this manager to track Score, Lives and Game Lost condition
     public int Score { get; set; }
     public int Lives { get; set; }
+    public int FinalTime { get; set; }
     public bool IsPlayerDead { get; set; }
 
     void Awake()
@@ -46,6 +47,7 @@ public class GameManager : MonoBehaviour
     {
         Score = 0;
         Lives = 3;
+        FinalTime = 0;
         IsPlayerDead = false;
     }
 
