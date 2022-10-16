@@ -4,7 +4,8 @@
 //  Run Princess, Run! By Sophia Kovalenko - 101333565
 //  This program contains the scripts for a simple mobile game still in development.
 //
-//  Last modified: October 2nd, 2022
+//  Created: October 2nd, 2022
+//  Last modified: October 16th, 2022
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
