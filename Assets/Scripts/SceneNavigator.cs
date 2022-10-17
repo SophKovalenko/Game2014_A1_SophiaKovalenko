@@ -16,38 +16,33 @@ using UnityEngine.SceneManagement;
 
 public class SceneNavigator : MonoBehaviour
 {
-
-    // Update is called once per frame
-    void Update()
+    public void OnInstructionsButtonClicked()
     {
-        if (Input.GetKeyDown(KeyCode.M))
-        { 
-            SceneManager.LoadScene("MainMenu"); 
-        }
+        SceneManager.LoadScene("Instructions");
+    }
 
-        if (Input.GetKeyDown(KeyCode.I))
-        {
-            SceneManager.LoadScene("Instructions");
-        }
 
-        if (Input.GetKeyDown(KeyCode.O))
-        {
-            SceneManager.LoadScene("Level1GameScreen");
-        }
+    public void OnPlayButtonClicked()
+    {
+        SceneManager.LoadScene("Level1GameScreen");
+    }
 
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            SceneManager.LoadScene("Level2GameScreen");
-        }
+    public void OnContinueButtonClicked()
+    {
+        SceneManager.LoadScene("Level2GameScreen");
+    }
 
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            SceneManager.LoadScene("GameLostScreen");
-        }
+    public void OnBackButtonClicked()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
 
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            SceneManager.LoadScene("GameWon");
-        }
+    public void OnExitButtonClicked()
+    {
+        //Quit the game if running as app
+        Application.Quit();
+
+        //Quit the game if running in editor
+        UnityEditor.EditorApplication.isPlaying = false;
     }
 }

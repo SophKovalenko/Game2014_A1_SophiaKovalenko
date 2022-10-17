@@ -24,6 +24,6 @@ EditorBuildSettings:
     path: Assets/Scenes/GameLostScreen.unity
     guid: 67460536d6a891241ad1bb4387712f6c
   - enabled: 1
-    path: Assets/Scenes/GameWon.unity
+    path: Assets/Scenes/LevelWon.unity
     guid: 5bc1bf10d9b71a04d8c60758fe5ceb5e
   m_configObjects: {}
