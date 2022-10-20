@@ -26,4 +26,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LevelWon.unity
     guid: 5bc1bf10d9b71a04d8c60758fe5ceb5e
-  m_configObjects: {}
+  - enabled: 1
+    path: Assets/Scenes/GameWon.unity
+    guid: 27867810fc17a6b48a4e65a4263977ce
+  m_configObjects:
+    com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: 9eb47c7cab1904e4e8569e817a83579a, type: 2}

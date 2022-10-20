@@ -123,6 +123,6 @@ MonoBehaviour:
     minBoundary: -4.4
     maxBoundary: 3.5
   horizontalPosition: -9.5
-  usingMobileInput: 0
+  usingMobileInput: 1
   bulletSpawnPoint: {fileID: 0}
   fireRate: 0.2

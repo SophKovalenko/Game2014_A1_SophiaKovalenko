@@ -27,50 +27,32 @@ public class PlayerController : MonoBehaviour
 
 
     private Camera camera;
-    //private BulletManager bulletManager;
+    private BulletManager bulletManager;
     //private ScoreController scoreManager;
 
     // Start is called before the first frame update
     void Start()
     {
         //scoreManager = FindObjectOfType<ScoreController>();
-        //bulletManager = FindObjectOfType<BulletManager>();
+        bulletManager = FindObjectOfType<BulletManager>();
 
         transform.position = new Vector2(horizontalPosition, 0.0f);
         camera = Camera.main;
 
-        // Platform Detection for input
-        usingMobileInput = Application.platform == RuntimePlatform.Android ||
-                           Application.platform == RuntimePlatform.IPhonePlayer;
-
-       // InvokeRepeating("FireBullets", 0.1f, fireRate);
+       InvokeRepeating("FireBullets", 0.1f, fireRate);
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (usingMobileInput)
-        {
-            GetMobileInput();
-        }
-        else
-        {
-            GetConventionalInput();
-        }
-
+        GetMobileInput();
         Move();
 
         //if (Input.GetKeyDown(KeyCode.K))
         //{
         //    scoreManager.AddPoints(10);
         //}
-    }
-
-    void GetConventionalInput()
-    {
-        float y = Input.GetAxisRaw("Vertical") * Time.deltaTime * speed;
-        transform.position += new Vector3(0, y, 0);
     }
 
     void GetMobileInput()
@@ -91,6 +73,6 @@ public class PlayerController : MonoBehaviour
 
     void FireBullets()
     {
-        //bulletManager.GetBullet(bulletSpawnPoint.position, BulletType.PLAYER);
+        bulletManager.GetBullet(bulletSpawnPoint.position, BulletType.PLAYER);
     }
 }
