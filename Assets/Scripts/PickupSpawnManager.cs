@@ -5,7 +5,7 @@
 //  This program contains the scripts for a simple mobile game still in development.
 //
 //  Created: October 16th, 2022
-//  Last modified: October 16th, 2022
+//  Last modified: October 20th, 2022
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 using System.Collections;
