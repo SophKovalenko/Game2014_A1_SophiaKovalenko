@@ -15,8 +15,8 @@ using UnityEngine;
 public class PickupSpawnManager : MonoBehaviour
 {
     public GameObject[] spawnObjectsPrefabs;
-    private float intervalOfSpawn = 2.0f;
-    private float delayOfNextSpawn = 3.0f;
+    private float intervalOfSpawn = 3.0f;
+    private float delayOfNextSpawn = 4.0f;
 
     public float horizonalLocation = 5.0f;
     public Boundary boundary;

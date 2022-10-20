@@ -664,6 +664,37 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1482879536
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1482879537}
+  m_Layer: 0
+  m_Name: Bullets
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1482879537
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1482879536}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.5066516, y: 0.816059, z: 0.05352493}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 20
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1589016965
 GameObject:
   m_ObjectHideFlags: 0
@@ -1726,6 +1757,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1961340844}
   - component: {fileID: 1961340843}
+  - component: {fileID: 1961340846}
+  - component: {fileID: 1961340845}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1760,6 +1793,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1961340845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1961340842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46740f0aa51e1414ca894e228ed6215d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1961340846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1961340842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc9bb728fb5c4a246ba66477377a1b4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerBulletNumber: 20
+  playerBulletCount: 0
+  activePlayerBullets: 0
+  enemyBulletNumber: 30
+  enemyBulletCount: 0
+  activeEnemyBullets: 0
 --- !u!1 &1995813066
 GameObject:
   m_ObjectHideFlags: 0
@@ -2398,10 +2461,6 @@ PrefabInstance:
     - target: {fileID: 826128214017429174, guid: fc9347b2e67584040b5f69c4c26681c9, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 3464945376874246082, guid: fc9347b2e67584040b5f69c4c26681c9, type: 3}
-      propertyPath: horizontalPosition
-      value: -9.5
       objectReference: {fileID: 0}
     - target: {fileID: 7346684431822518386, guid: fc9347b2e67584040b5f69c4c26681c9, type: 3}
       propertyPath: m_RootOrder

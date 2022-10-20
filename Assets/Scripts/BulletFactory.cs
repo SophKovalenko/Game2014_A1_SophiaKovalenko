@@ -1,3 +1,13 @@
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+//  Mobile Game Development
+//  Game 2014 Assignment 1
+//  Run Princess, Run! By Sophia Kovalenko - 101333565
+//  This program contains the scripts for a simple mobile game still in development.
+//
+//  Created: October 20th, 2022
+//  Last modified: October 20th, 2022
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -24,9 +34,9 @@ public class BulletFactory : MonoBehaviour
 
     private void Initialize()
     {
-        playerBulletSprite = Resources.Load<Sprite>("Sprites/Bullet");
-        enemyBulletSprite = Resources.Load<Sprite>("Sprites/EnemyBullet");
-        bulletPrefab = Resources.Load<GameObject>("Prefabs/PlayerBullet");
+        playerBulletSprite = Resources.Load<Sprite>("VisualAssets/Sprites/Projectile");
+        enemyBulletSprite = Resources.Load<Sprite>("VisualAssets/Sprites/Arrow");
+        bulletPrefab = Resources.Load<GameObject>("Prefabs/Bullet");
         bulletParent = GameObject.Find("Bullets").transform;
     }
 
@@ -39,13 +49,13 @@ public class BulletFactory : MonoBehaviour
             case BulletType.PLAYER:
                 bullet.GetComponent<SpriteRenderer>().sprite = playerBulletSprite;
                 bullet.GetComponent<BulletBehaviour>().bulletType = BulletType.PLAYER;
-                bullet.GetComponent<BulletBehaviour>().SetDirection(BulletDirection.Up);
+                bullet.GetComponent<BulletBehaviour>().SetDirection(BulletDirection.Right);
 
                 break;
             case BulletType.ENEMY:
                 bullet.GetComponent<SpriteRenderer>().sprite = enemyBulletSprite;
                 bullet.GetComponent<BulletBehaviour>().bulletType = BulletType.ENEMY;
-                bullet.GetComponent<BulletBehaviour>().SetDirection(BulletDirection.Down);
+                bullet.GetComponent<BulletBehaviour>().SetDirection(BulletDirection.Left);
                 break;
         }
 

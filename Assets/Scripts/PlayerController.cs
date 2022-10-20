@@ -18,13 +18,10 @@ public class PlayerController : MonoBehaviour
     public float speed = 6.0f;
     public Boundary boundary;
     public float horizontalPosition = -9.5f;
-    public bool usingMobileInput = false;
 
     [Header("Bullet Properties")]
     public Transform bulletSpawnPoint;
-    [Range(0.1f, 1.0f)]
-    public float fireRate = 0.2f;
-
+    private float fireRate = 1.0f;
 
     private Camera camera;
     private BulletManager bulletManager;
