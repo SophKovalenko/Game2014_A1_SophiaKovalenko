@@ -82,10 +82,15 @@ public class BulletBehaviour : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if ((bulletType == BulletType.PLAYER) ||
-            (bulletType == BulletType.ENEMY && other.gameObject.CompareTag("Player")))
+        if (bulletType == BulletType.PLAYER && other.gameObject.CompareTag("Enemy"))
         {
             bulletManager.ReturnBullet(this.gameObject, bulletType);
+        }
+
+        if (bulletType == BulletType.ENEMY && other.gameObject.CompareTag("Player"))
+        {
+            bulletManager.ReturnBullet(this.gameObject, bulletType);
+            GameManager.Instance.Lives -= 1;
         }
 
     }

@@ -620,7 +620,7 @@ GameObject:
   - component: {fileID: 800328844}
   - component: {fileID: 800328843}
   m_Layer: 0
-  m_Name: Lives (1)
+  m_Name: Lives2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1112,6 +1112,7 @@ GameObject:
   - component: {fileID: 1496936692}
   - component: {fileID: 1496936694}
   - component: {fileID: 1496936693}
+  - component: {fileID: 1496936695}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1158,7 +1159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a9d831cd6d18ac4cbf138b1f947f922, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyNumber: 3
+  enemyNumber: 0
   enemyPrefab: {fileID: 8547008717592521990, guid: eb3ff86bda6c91e4080e8ff3fffe26b9, type: 3}
   enemyList: []
 --- !u!114 &1496936693
@@ -1191,6 +1192,21 @@ MonoBehaviour:
   enemyBulletNumber: 30
   enemyBulletCount: 0
   activeEnemyBullets: 0
+--- !u!114 &1496936695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1496936689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7eff078cc2fd89649bf776edf2b03cad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifeOnePrefab: {fileID: 1584760722}
+  lifeTwoPrefab: {fileID: 800328842}
+  lifeThreePrefab: {fileID: 1596448187}
 --- !u!1 &1584760722
 GameObject:
   m_ObjectHideFlags: 0
@@ -1202,7 +1218,7 @@ GameObject:
   - component: {fileID: 1584760724}
   - component: {fileID: 1584760723}
   m_Layer: 0
-  m_Name: Lives (2)
+  m_Name: Lives1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1458,7 +1474,7 @@ GameObject:
   - component: {fileID: 1596448189}
   - component: {fileID: 1596448188}
   m_Layer: 0
-  m_Name: Lives
+  m_Name: Lives3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

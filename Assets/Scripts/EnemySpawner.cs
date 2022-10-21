@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    [Range(1, 4)]
     public int enemyNumber = 2;
     public GameObject enemyPrefab;
     public List<GameObject> enemyList;

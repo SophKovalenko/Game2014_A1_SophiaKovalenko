@@ -35,6 +35,8 @@ public class GameManager : MonoBehaviour
     public int Score { get; set; }
     public int Lives { get; set; }
     public int FinalTime { get; set; }
+    public bool IsPlayerInvincible { get; set; }
+    public bool HasPlayerSpedUp { get; set; }
     public bool IsPlayerDead { get; set; }
 
     void Awake()
@@ -48,6 +50,8 @@ public class GameManager : MonoBehaviour
         Score = 0;
         Lives = 3;
         FinalTime = 0;
+        IsPlayerInvincible = false;
+        HasPlayerSpedUp = false;
         IsPlayerDead = false;
     }
 

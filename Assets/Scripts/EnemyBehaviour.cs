@@ -77,4 +77,20 @@ public class EnemyBehaviour : MonoBehaviour
     {
         bulletManager.GetBullet(bulletSpawnPoint.position, BulletType.ENEMY);
     }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            ResetEnemy();
+            GameManager.Instance.Lives -= 1;
+
+            if (GameManager.Instance.Lives == 0)
+            {
+               // GameManager.Instance.IsPlayerDead = true;
+            }
+            //Crash sfx
+        }
+
+    }
 }
