@@ -125,10 +125,12 @@ public class PlayerController : MonoBehaviour
 
         if (other.gameObject.CompareTag("ExtraLife"))
         {
-            GameManager.Instance.Lives += 1;
-            Debug.Log("Extra Life Collected!");
+            if (GameManager.Instance.Lives <= 3)
+            { GameManager.Instance.Lives += 1;
+                Debug.Log("Extra Life Collected!");
 
-            playerAudio.PlayOneShot(restoreLife, 1.0f);
+                playerAudio.PlayOneShot(restoreLife, 1.0f); 
+            }
             Destroy(other.gameObject);
         }
 
@@ -139,6 +141,11 @@ public class PlayerController : MonoBehaviour
 
             playerAudio.PlayOneShot(crashIntoHazard, 1.0f);
             Destroy(other.gameObject);
+
+            if (GameManager.Instance.Lives <= 0)
+            {
+               GameManager.Instance.IsPlayerDead = true;
+            }
         }
 
         if (other.gameObject.CompareTag("Horse"))
@@ -176,11 +183,11 @@ public class PlayerController : MonoBehaviour
             GameManager.Instance.Lives -= 1;
             playerAudio.PlayOneShot(playerHurt, 1.0f);
 
-            if (GameManager.Instance.Lives == 0)
+            if (GameManager.Instance.Lives <= 0)
             {
-                // GameManager.Instance.IsPlayerDead = true;
+                GameManager.Instance.IsPlayerDead = true;
             }
-      
+
         }
     }
 }

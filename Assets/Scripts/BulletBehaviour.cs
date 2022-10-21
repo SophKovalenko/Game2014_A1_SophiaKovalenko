@@ -83,6 +83,9 @@ public class BulletBehaviour : MonoBehaviour
         if (bulletType == BulletType.PLAYER && other.gameObject.CompareTag("Enemy"))
         {
             GameManager.Instance.IsEnemyDestroyed = true;
+            //Add 10 points to score
+            GameManager.Instance.Score += 5;
+
             bulletManager.ReturnBullet(this.gameObject, bulletType);
         }
 

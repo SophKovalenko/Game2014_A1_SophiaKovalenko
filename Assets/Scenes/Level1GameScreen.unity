@@ -1045,6 +1045,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be0734d1706318b47ba39d6011cd167c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerFinalTime: 0
 --- !u!114 &1912908712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1276,6 +1277,7 @@ GameObject:
   - component: {fileID: 1961340846}
   - component: {fileID: 1961340845}
   - component: {fileID: 1961340848}
+  - component: {fileID: 1961340849}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1355,6 +1357,20 @@ MonoBehaviour:
   lifeOnePrefab: {fileID: 1928238483}
   lifeTwoPrefab: {fileID: 800328842}
   lifeThreePrefab: {fileID: 1596448187}
+--- !u!114 &1961340849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1961340842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8d0676fc20683641b1dbced7315731d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreText: {fileID: 2092030572}
+  playerCurrentScore: 0
 --- !u!1 &1995813066
 GameObject:
   m_ObjectHideFlags: 0

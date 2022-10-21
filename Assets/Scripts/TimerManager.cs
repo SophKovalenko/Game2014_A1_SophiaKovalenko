@@ -18,6 +18,8 @@ public class TimerManager : MonoBehaviour
 {
     private float startingTime = 0;
     private TMP_Text timerText;
+
+    [SerializeField]
     private int playerFinalTime;
 
     // Start is called before the first frame update
@@ -31,8 +33,6 @@ public class TimerManager : MonoBehaviour
     {
         if (GameManager.Instance.IsPlayerDead == false)
         {
-            float dt = Time.deltaTime;
-            startingTime += dt;
             UpdateTimer();
         }
 
@@ -45,6 +45,9 @@ public class TimerManager : MonoBehaviour
 
     void UpdateTimer()
     {
+        float dt = Time.deltaTime;
+        startingTime += dt;
+
         timerText.text = "" + Mathf.Round(startingTime) + " seconds";
     }
 }
