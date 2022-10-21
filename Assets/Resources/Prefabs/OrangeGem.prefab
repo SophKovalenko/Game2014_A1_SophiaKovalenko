@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5217906255121862897}
   - component: {fileID: 5992186390235970682}
   - component: {fileID: 5998783487902041367}
+  - component: {fileID: -964776804650762807}
   m_Layer: 0
   m_Name: OrangeGem
   m_TagString: Untagged
@@ -98,3 +99,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scrollSpeed: 4
+--- !u!61 &-964776804650762807
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3976139917926568376}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.01, y: 1.71}
+    newSize: {x: 1.01, y: 1.71}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.01, y: 1.71}
+  m_EdgeRadius: 0

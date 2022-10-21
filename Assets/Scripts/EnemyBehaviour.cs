@@ -1,3 +1,13 @@
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+//  Mobile Game Development
+//  Game 2014 Assignment 1
+//  Run Princess, Run! By Sophia Kovalenko - 101333565
+//  This program contains the scripts for a simple mobile game still in development.
+//
+//  Created: October 20th, 2022
+//  Last modified: October 20th, 2022
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,7 +23,6 @@ public class EnemyBehaviour : MonoBehaviour
 
     [Header("Bullet Properties")]
     public Transform bulletSpawnPoint;
-    [Range(0.01f, 1.0f)]
     private float fireRate = 2.0f;
 
     private SpriteRenderer spriteRenderer;
@@ -59,8 +68,8 @@ public class EnemyBehaviour : MonoBehaviour
     {
         var RandomXPosition = Random.Range(horizontalBoundary.minBoundary, horizontalBoundary.maxBoundary);
         var RandomYPosition = Random.Range(verticalBoundary.minBoundary, verticalBoundary.maxBoundary);
-        horizontalSpeed = Random.Range(1.0f, 3.0f);
-        verticalSpeed = Random.Range(1.0f, 6.0f);
+        horizontalSpeed = Random.Range(0.5f, 2.0f);
+        verticalSpeed = Random.Range(0.5f, 5.0f);
         transform.position = new Vector3(11.0f, RandomYPosition, 0.0f);
     }
 
