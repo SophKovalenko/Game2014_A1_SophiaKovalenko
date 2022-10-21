@@ -21,10 +21,18 @@ public class PlayerController : MonoBehaviour
 
     [Header("Bullet Properties")]
     public Transform bulletSpawnPoint;
-    private float fireRate = 1.0f;
+    private float fireRate = 1.2f;
 
     private Camera camera;
     private BulletManager bulletManager;
+
+    private AudioSource playerAudio;
+    public AudioClip firePlayerBullet;
+    public AudioClip playerHurt;
+    public AudioClip pickupGem;
+    public AudioClip pickupPowerup;
+    public AudioClip restoreLife;
+    public AudioClip crashIntoHazard;
 
     public int invincibilityTimer = 0;
     public int increasedSpeedTimer = 0;
@@ -33,6 +41,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         bulletManager = FindObjectOfType<BulletManager>();
+        playerAudio = GetComponent<AudioSource>();
 
         transform.position = new Vector2(horizontalPosition, 0.0f);
         camera = Camera.main;
@@ -76,6 +85,7 @@ public class PlayerController : MonoBehaviour
     void FireBullets()
     {
         bulletManager.GetBullet(bulletSpawnPoint.position, BulletType.PLAYER);
+        playerAudio.PlayOneShot(firePlayerBullet, 0.5f);
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -87,6 +97,7 @@ public class PlayerController : MonoBehaviour
             //Add 50 points to score
             GameManager.Instance.Score += 50;
 
+            playerAudio.PlayOneShot(pickupGem, 1.0f);
             Destroy(other.gameObject);
         }
 
@@ -97,6 +108,7 @@ public class PlayerController : MonoBehaviour
             //Add 25 points to score
             GameManager.Instance.Score += 25;
 
+            playerAudio.PlayOneShot(pickupGem, 1.0f);
             Destroy(other.gameObject);
         }
 
@@ -107,6 +119,7 @@ public class PlayerController : MonoBehaviour
             //Add 10 points to score
             GameManager.Instance.Score += 10;
 
+            playerAudio.PlayOneShot(pickupGem, 1.0f);
             Destroy(other.gameObject);
         }
 
@@ -115,6 +128,7 @@ public class PlayerController : MonoBehaviour
             GameManager.Instance.Lives += 1;
             Debug.Log("Extra Life Collected!");
 
+            playerAudio.PlayOneShot(restoreLife, 1.0f);
             Destroy(other.gameObject);
         }
 
@@ -123,6 +137,7 @@ public class PlayerController : MonoBehaviour
             GameManager.Instance.Lives -= 1;
             Debug.Log("You lose a life!");
 
+            playerAudio.PlayOneShot(crashIntoHazard, 1.0f);
             Destroy(other.gameObject);
         }
 
@@ -130,6 +145,7 @@ public class PlayerController : MonoBehaviour
         {
             GameManager.Instance.HasPlayerSpedUp = true;
             Debug.Log("You gain speed!");
+            playerAudio.PlayOneShot(pickupPowerup, 1.0f);
 
             if (increasedSpeedTimer >= 100.0f)
             {
@@ -144,6 +160,7 @@ public class PlayerController : MonoBehaviour
         {
             GameManager.Instance.IsPlayerInvincible = true;
             Debug.Log("You are invincible for 10 seconds!");
+            playerAudio.PlayOneShot(pickupPowerup, 1.0f);
 
             if (invincibilityTimer >= 100.0f)
             {
@@ -152,6 +169,18 @@ public class PlayerController : MonoBehaviour
             }
 
             Destroy(other.gameObject);
+        }
+
+        if (other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("EnemyBullet"))
+        {
+            GameManager.Instance.Lives -= 1;
+            playerAudio.PlayOneShot(playerHurt, 1.0f);
+
+            if (GameManager.Instance.Lives == 0)
+            {
+                // GameManager.Instance.IsPlayerDead = true;
+            }
+      
         }
     }
 }

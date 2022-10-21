@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 163647758}
   - component: {fileID: 163647757}
+  - component: {fileID: 163647759}
   m_Layer: 0
   m_Name: SpawnManager
   m_TagString: Untagged
@@ -181,6 +182,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &163647759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 163647756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a9d831cd6d18ac4cbf138b1f947f922, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyNumber: 1
+  enemyPrefab: {fileID: 8547008717592521990, guid: eb3ff86bda6c91e4080e8ff3fffe26b9, type: 3}
+  enemyList: []
 --- !u!1 &260309932
 GameObject:
   m_ObjectHideFlags: 0
@@ -1109,7 +1125,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1496936691}
   - component: {fileID: 1496936690}
-  - component: {fileID: 1496936692}
   - component: {fileID: 1496936694}
   - component: {fileID: 1496936693}
   - component: {fileID: 1496936695}
@@ -1147,21 +1162,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1496936692
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1496936689}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a9d831cd6d18ac4cbf138b1f947f922, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyNumber: 0
-  enemyPrefab: {fileID: 8547008717592521990, guid: eb3ff86bda6c91e4080e8ff3fffe26b9, type: 3}
-  enemyList: []
 --- !u!114 &1496936693
 MonoBehaviour:
   m_ObjectHideFlags: 0

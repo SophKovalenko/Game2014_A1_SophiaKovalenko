@@ -24,17 +24,22 @@ public class EnemyBehaviour : MonoBehaviour
     [Header("Bullet Properties")]
     public Transform bulletSpawnPoint;
     private float fireRate = 2.0f;
+    public bool enemyCanShoot = false;
 
     private SpriteRenderer spriteRenderer;
     private BulletManager bulletManager;
 
-    public bool enemyCanShoot = false;
+    private AudioSource enemyAudio;
+    public AudioClip fireEnemyBullet;
+    public AudioClip enemyHurt;
 
     // Start is called before the first frame update
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         bulletManager = FindObjectOfType<BulletManager>();
+        enemyAudio = GetComponent<AudioSource>();
+
         ResetEnemy();
 
         if (enemyCanShoot == true)
@@ -48,6 +53,13 @@ public class EnemyBehaviour : MonoBehaviour
     {
         Move();
         CheckBounds();
+
+        if (GameManager.Instance.IsEnemyDestroyed == true)
+        {
+            ResetEnemy();
+            enemyAudio.PlayOneShot(enemyHurt, 0.8f);
+            GameManager.Instance.IsEnemyDestroyed = false;
+        }
     }
 
     void Move()
@@ -76,6 +88,7 @@ public class EnemyBehaviour : MonoBehaviour
     void FireBullets()
     {
         bulletManager.GetBullet(bulletSpawnPoint.position, BulletType.ENEMY);
+        enemyAudio.PlayOneShot(fireEnemyBullet, 1.0f);
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -83,13 +96,6 @@ public class EnemyBehaviour : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             ResetEnemy();
-            GameManager.Instance.Lives -= 1;
-
-            if (GameManager.Instance.Lives == 0)
-            {
-               // GameManager.Instance.IsPlayerDead = true;
-            }
-            //Crash sfx
         }
 
     }

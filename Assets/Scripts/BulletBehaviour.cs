@@ -33,8 +33,6 @@ public class BulletBehaviour : MonoBehaviour
     void Start()
     {
         bulletManager = FindObjectOfType<BulletManager>();
-
-        //SetDirection((bulletType == BulletType.PLAYER) ? BulletDirection.UP : BulletDirection.DOWN);
     }
 
     // Update is called once per frame
@@ -84,13 +82,14 @@ public class BulletBehaviour : MonoBehaviour
     {
         if (bulletType == BulletType.PLAYER && other.gameObject.CompareTag("Enemy"))
         {
+            GameManager.Instance.IsEnemyDestroyed = true;
             bulletManager.ReturnBullet(this.gameObject, bulletType);
         }
 
         if (bulletType == BulletType.ENEMY && other.gameObject.CompareTag("Player"))
         {
+            Debug.Log("BulletHittingPlayer");
             bulletManager.ReturnBullet(this.gameObject, bulletType);
-            GameManager.Instance.Lives -= 1;
         }
 
     }

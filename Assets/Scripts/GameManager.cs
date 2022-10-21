@@ -38,6 +38,7 @@ public class GameManager : MonoBehaviour
     public bool IsPlayerInvincible { get; set; }
     public bool HasPlayerSpedUp { get; set; }
     public bool IsPlayerDead { get; set; }
+    public bool IsEnemyDestroyed { get; set; }
 
     void Awake()
     {
@@ -53,6 +54,7 @@ public class GameManager : MonoBehaviour
         IsPlayerInvincible = false;
         HasPlayerSpedUp = false;
         IsPlayerDead = false;
+        IsEnemyDestroyed = false;
     }
 
 }

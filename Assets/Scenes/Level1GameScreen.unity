@@ -217,6 +217,7 @@ GameObject:
   m_Component:
   - component: {fileID: 539128180}
   - component: {fileID: 539128179}
+  - component: {fileID: 539128181}
   m_Layer: 0
   m_Name: SpawnManager
   m_TagString: Untagged
@@ -265,6 +266,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &539128181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 539128178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a9d831cd6d18ac4cbf138b1f947f922, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyNumber: 1
+  enemyPrefab: {fileID: 2772248686107543615, guid: d379c7749d9c6444498339f42ba960de, type: 3}
+  enemyList: []
 --- !u!1 &800328842
 GameObject:
   m_ObjectHideFlags: 0
@@ -1259,7 +1275,6 @@ GameObject:
   - component: {fileID: 1961340843}
   - component: {fileID: 1961340846}
   - component: {fileID: 1961340845}
-  - component: {fileID: 1961340847}
   - component: {fileID: 1961340848}
   m_Layer: 0
   m_Name: GameManager
@@ -1325,21 +1340,6 @@ MonoBehaviour:
   enemyBulletNumber: 30
   enemyBulletCount: 0
   activeEnemyBullets: 0
---- !u!114 &1961340847
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1961340842}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a9d831cd6d18ac4cbf138b1f947f922, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyNumber: 2
-  enemyPrefab: {fileID: 2772248686107543615, guid: d379c7749d9c6444498339f42ba960de, type: 3}
-  enemyList: []
 --- !u!114 &1961340848
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1910,6 +1910,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3464945376874246082, guid: fc9347b2e67584040b5f69c4c26681c9, type: 3}
+      propertyPath: firePlayerBullet
+      value: 
+      objectReference: {fileID: 8300000, guid: b61008428407cc4468c81562760a6a2a, type: 3}
     - target: {fileID: 5009785702783704591, guid: fc9347b2e67584040b5f69c4c26681c9, type: 3}
       propertyPath: m_IsTrigger
       value: 1
