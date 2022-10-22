@@ -5,7 +5,7 @@
 //  This program contains the scripts for a simple mobile game still in development.
 //
 //  Created: October 2nd, 2022
-//  Last modified: October 16th, 2022
+//  Last modified: October 22nd, 2022
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 using System.Collections;
@@ -32,10 +32,7 @@ public class GameManager : MonoBehaviour
     }
 
     //Use this manager to track Score, Lives and Game Lost condition
-    public int Score { get; set; }
     public int Lives { get; set; }
-    public int FinalTime { get; set; }
-    public int PlayerScore { get; set; }
     public bool IsPlayerInvincible { get; set; }
     public bool HasPlayerSpedUp { get; set; }
     public bool IsPlayerDead { get; set; }
@@ -44,15 +41,13 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         instance = this;
+        
     }
 
     // Set inital properties for variables
     void Start()
     {
-        Score = 0;
         Lives = 3;
-        FinalTime = 0;
-        PlayerScore = 0;
         IsPlayerInvincible = false;
         HasPlayerSpedUp = false;
         IsPlayerDead = false;

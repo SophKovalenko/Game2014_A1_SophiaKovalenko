@@ -491,7 +491,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be0734d1706318b47ba39d6011cd167c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerFinalTime: 0
+  playerCurrentTime: 0
 --- !u!114 &785761223
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -868,7 +868,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a1ffba441b8e8549b722109fd6f3130, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollSpeed: 3
 --- !u!114 &871598946
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1125,30 +1124,17 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1496936691}
-  - component: {fileID: 1496936690}
   - component: {fileID: 1496936694}
   - component: {fileID: 1496936693}
   - component: {fileID: 1496936695}
   - component: {fileID: 1496936696}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: OtherSceneManagers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1496936690
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1496936689}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae50b010611382f4084f97fd5b7ae49e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1496936691
 Transform:
   m_ObjectHideFlags: 0

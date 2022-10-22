@@ -5,7 +5,7 @@
 //  This program contains the scripts for a simple mobile game still in development.
 //
 //  Created: October 2nd, 2022
-//  Last modified: October 20th, 2022
+//  Last modified: October 22th, 2022
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -22,6 +22,27 @@ public class SceneNavigator : MonoBehaviour
     public void Start()
     {
      UIAudio = GetComponent<AudioSource>();
+    }
+
+    public void Update()
+    {
+        if (GameManager.Instance.IsPlayerDead == true)
+        {
+            SceneManager.LoadScene("GameLostScreen");
+        }
+
+        if (TimeKeeper.totalTime >= 120.0f && TimeKeeper.isCurrentLevel2 == false)
+        {
+            ChangeLevelOne();
+            TimeKeeper.isCurrentLevel2 = true;
+        }
+
+        if (TimeKeeper.totalTime >= 180.0f && TimeKeeper.isCurrentLevel2 == true)
+        {
+
+            ChangeLevelTwo();
+        }
+
     }
 
     public void PlayUIAudio()
@@ -65,4 +86,15 @@ public class SceneNavigator : MonoBehaviour
         UnityEditor.EditorApplication.isPlaying = false;
     }
 
+    public void ChangeLevelOne()
+    {
+        TimeKeeper.totalTime = 0;
+        SceneManager.LoadScene("LevelWon");
+    }
+
+    public void ChangeLevelTwo()
+    {
+        TimeKeeper.totalTime = 0;
+        SceneManager.LoadScene("GameWon");
+    }
 }

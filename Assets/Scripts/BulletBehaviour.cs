@@ -84,7 +84,7 @@ public class BulletBehaviour : MonoBehaviour
         {
             GameManager.Instance.IsEnemyDestroyed = true;
             //Add 10 points to score
-            GameManager.Instance.Score += 5;
+            ScoreKeeper.totalScore += 5;
 
             bulletManager.ReturnBullet(this.gameObject, bulletType);
         }

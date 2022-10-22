@@ -12,14 +12,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public class MoveToLeft : MonoBehaviour
 {
-    public float scrollSpeed = 5.0f;
+    private float scrollSpeed = 3.5f;
     private float leftBoundary = -11.0f;
 
     // Update is called once per frame
     void Update()
     {
+        if (GameManager.Instance.HasPlayerSpedUp == true)
+        {
+            scrollSpeed = 6.0f;
+        }
+
+        if (GameManager.Instance.HasPlayerSpedUp == false)
+        {
+            scrollSpeed = 3.5f;
+        }
+
         //Scroll the gameObjects to the left
         transform.Translate(Vector3.left * scrollSpeed * Time.deltaTime, Space.World);
 

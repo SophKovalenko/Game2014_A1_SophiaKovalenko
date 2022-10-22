@@ -5,7 +5,7 @@
 //  This program contains the scripts for a simple mobile game still in development.
 //
 //  Created: October 16th, 2022
-//  Last modified: October 16th, 2022
+//  Last modified: October 20th, 2022
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 using System.Collections;
@@ -59,6 +59,12 @@ public class PlayerController : MonoBehaviour
         if (GameManager.Instance.IsPlayerInvincible == true)
         {
             invincibilityTimer++;
+
+            if (invincibilityTimer >= 1)
+            {
+                GameManager.Instance.IsPlayerInvincible = false;
+                invincibilityTimer = 0;
+            }
         }
 
         if (GameManager.Instance.HasPlayerSpedUp == true)
@@ -95,7 +101,7 @@ public class PlayerController : MonoBehaviour
             Debug.Log("Blue Gem Collected!");
 
             //Add 50 points to score
-            GameManager.Instance.Score += 50;
+            ScoreKeeper.totalScore += 50;
 
             playerAudio.PlayOneShot(pickupGem, 1.0f);
             Destroy(other.gameObject);
@@ -106,7 +112,7 @@ public class PlayerController : MonoBehaviour
             Debug.Log("Green Gem Collected!");
 
             //Add 25 points to score
-            GameManager.Instance.Score += 25;
+            ScoreKeeper.totalScore += 25;
 
             playerAudio.PlayOneShot(pickupGem, 1.0f);
             Destroy(other.gameObject);
@@ -117,7 +123,7 @@ public class PlayerController : MonoBehaviour
             Debug.Log("Orange Gem Collected!");
 
             //Add 10 points to score
-            GameManager.Instance.Score += 10;
+            ScoreKeeper.totalScore += 10;
 
             playerAudio.PlayOneShot(pickupGem, 1.0f);
             Destroy(other.gameObject);
@@ -154,12 +160,6 @@ public class PlayerController : MonoBehaviour
             Debug.Log("You gain speed!");
             playerAudio.PlayOneShot(pickupPowerup, 1.0f);
 
-            if (increasedSpeedTimer >= 100.0f)
-            {
-                GameManager.Instance.HasPlayerSpedUp = false;
-                increasedSpeedTimer = 0;
-            }
-
             Destroy(other.gameObject);
         }
 
@@ -169,7 +169,7 @@ public class PlayerController : MonoBehaviour
             Debug.Log("You are invincible for 10 seconds!");
             playerAudio.PlayOneShot(pickupPowerup, 1.0f);
 
-            if (invincibilityTimer >= 100.0f)
+            if (invincibilityTimer >= 1.0f)
             {
                 GameManager.Instance.IsPlayerInvincible = false;
                 invincibilityTimer = 0;
