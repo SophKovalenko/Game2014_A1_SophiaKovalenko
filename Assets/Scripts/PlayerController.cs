@@ -37,16 +37,20 @@ public class PlayerController : MonoBehaviour
     public int invincibilityTimer = 0;
     public int increasedSpeedTimer = 0;
 
+    SpriteRenderer playerSpriteRenderer;
+
     // Start is called before the first frame update
     void Start()
     {
         bulletManager = FindObjectOfType<BulletManager>();
         playerAudio = GetComponent<AudioSource>();
+        playerSpriteRenderer = GetComponent<SpriteRenderer>();
 
         transform.position = new Vector2(horizontalPosition, 0.0f);
         camera = Camera.main;
 
        InvokeRepeating("FireBullets", 0.1f, fireRate);
+
 
     }
 
@@ -59,17 +63,25 @@ public class PlayerController : MonoBehaviour
         if (GameManager.Instance.IsPlayerInvincible == true)
         {
             invincibilityTimer++;
+            playerSpriteRenderer.color = Color.yellow;
 
-            if (invincibilityTimer >= 1)
+            if (invincibilityTimer >= 4100)
             {
                 GameManager.Instance.IsPlayerInvincible = false;
                 invincibilityTimer = 0;
+                playerSpriteRenderer.color = Color.white;
             }
         }
 
         if (GameManager.Instance.HasPlayerSpedUp == true)
         {
             increasedSpeedTimer++;
+
+            if (increasedSpeedTimer >= 4100)
+            {
+                GameManager.Instance.HasPlayerSpedUp = false;
+                increasedSpeedTimer = 0;
+            }
         }
     }
 
@@ -142,15 +154,18 @@ public class PlayerController : MonoBehaviour
 
         if (other.gameObject.CompareTag("Hazard"))
         {
-            GameManager.Instance.Lives -= 1;
-            Debug.Log("You lose a life!");
-
-            playerAudio.PlayOneShot(crashIntoHazard, 1.0f);
-            Destroy(other.gameObject);
-
-            if (GameManager.Instance.Lives <= 0)
+            if (GameManager.Instance.IsPlayerInvincible == false)
             {
-               GameManager.Instance.IsPlayerDead = true;
+                GameManager.Instance.Lives -= 1;
+                Debug.Log("You lose a life!");
+
+                playerAudio.PlayOneShot(crashIntoHazard, 1.0f);
+                Destroy(other.gameObject);
+
+                if (GameManager.Instance.Lives <= 0)
+                {
+                    GameManager.Instance.IsPlayerDead = true;
+                }
             }
         }
 
@@ -169,25 +184,21 @@ public class PlayerController : MonoBehaviour
             Debug.Log("You are invincible for 10 seconds!");
             playerAudio.PlayOneShot(pickupPowerup, 1.0f);
 
-            if (invincibilityTimer >= 1.0f)
-            {
-                GameManager.Instance.IsPlayerInvincible = false;
-                invincibilityTimer = 0;
-            }
-
             Destroy(other.gameObject);
         }
 
         if (other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("EnemyBullet"))
         {
-            GameManager.Instance.Lives -= 1;
-            playerAudio.PlayOneShot(playerHurt, 1.0f);
-
-            if (GameManager.Instance.Lives <= 0)
+            if (GameManager.Instance.IsPlayerInvincible == false)
             {
-                GameManager.Instance.IsPlayerDead = true;
-            }
+                GameManager.Instance.Lives -= 1;
+                playerAudio.PlayOneShot(playerHurt, 1.0f);
 
+                if (GameManager.Instance.Lives <= 0)
+                {
+                    GameManager.Instance.IsPlayerDead = true;
+                }
+            }
         }
     }
 }

@@ -15,7 +15,7 @@ using UnityEngine;
 [System.Serializable]
 public class MoveToLeft : MonoBehaviour
 {
-    private float scrollSpeed = 3.5f;
+    private float scrollSpeed = 4.0f;
     private float leftBoundary = -11.0f;
 
     // Update is called once per frame
@@ -23,12 +23,12 @@ public class MoveToLeft : MonoBehaviour
     {
         if (GameManager.Instance.HasPlayerSpedUp == true)
         {
-            scrollSpeed = 6.0f;
+            scrollSpeed = 7.0f;
         }
 
         if (GameManager.Instance.HasPlayerSpedUp == false)
         {
-            scrollSpeed = 3.5f;
+            scrollSpeed = 4.0f;
         }
 
         //Scroll the gameObjects to the left
