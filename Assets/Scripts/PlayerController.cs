@@ -36,8 +36,8 @@ public class PlayerController : MonoBehaviour
     public AudioClip restoreLife;
     public AudioClip crashIntoHazard;
 
-    public int invincibilityTimer = 0;
-    public int increasedSpeedTimer = 0;
+    public float invincibilityTimer = 0;
+    public float increasedSpeedTimer = 0;
 
     SpriteRenderer playerSpriteRenderer;
 
@@ -64,10 +64,10 @@ public class PlayerController : MonoBehaviour
 
         if (GameManager.Instance.IsPlayerInvincible == true)
         {
-            invincibilityTimer++;
+            invincibilityTimer += Time.deltaTime;
             playerSpriteRenderer.color = Color.yellow;
 
-            if (invincibilityTimer >= 4100)
+            if (invincibilityTimer >= 10.0f)
             {
                 GameManager.Instance.IsPlayerInvincible = false;
                 invincibilityTimer = 0;
@@ -77,9 +77,9 @@ public class PlayerController : MonoBehaviour
 
         if (GameManager.Instance.HasPlayerSpedUp == true)
         {
-            increasedSpeedTimer++;
+            increasedSpeedTimer += Time.deltaTime;
 
-            if (increasedSpeedTimer >= 4100)
+            if (increasedSpeedTimer >= 10.0f)
             {
                 GameManager.Instance.HasPlayerSpedUp = false;
                 increasedSpeedTimer = 0;

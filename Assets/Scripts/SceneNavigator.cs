@@ -85,9 +85,6 @@ public class SceneNavigator : MonoBehaviour
 
         //Quit the game if running as app
         Application.Quit();
-
-        //Quit the game if running in editor
-        UnityEditor.EditorApplication.isPlaying = false;
     }
 
     public void ChangeLevelOne()

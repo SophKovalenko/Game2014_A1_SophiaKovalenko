@@ -30,4 +30,6 @@ EditorBuildSettings:
     path: Assets/Scenes/GameWon.unity
     guid: 27867810fc17a6b48a4e65a4263977ce
   m_configObjects:
+    com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 242c41901364a2f438abde559041f4bc, type: 2}
+    com.unity.adaptiveperformance.samsung.android.provider_settings: {fileID: 11400000, guid: 49004b8cbde03ac448405c4d0ee03a92, type: 2}
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: 9eb47c7cab1904e4e8569e817a83579a, type: 2}
