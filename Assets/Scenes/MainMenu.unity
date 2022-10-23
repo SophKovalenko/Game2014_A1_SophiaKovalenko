@@ -274,8 +274,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294901792
-  m_fontColor: {r: 0.123906136, g: 0, b: 1, a: 1}
+    rgba: 4283035962
+  m_fontColor: {r: 0.22605905, g: 0.9433962, b: 0.2863235, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -864,9 +864,9 @@ RectTransform:
   m_Father: {fileID: 2099778365}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -715.31, y: -463}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 828.68994, y: -463}
   m_SizeDelta: {x: 750, y: 520}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1664747699
@@ -1139,9 +1139,9 @@ RectTransform:
   m_Father: {fileID: 2099778365}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 757, y: -276}
+  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: -787, y: -276}
   m_SizeDelta: {x: 750, y: 520}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1928871416

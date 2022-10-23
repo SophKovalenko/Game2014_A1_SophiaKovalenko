@@ -1,4 +1,4 @@
-//////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
 //  Mobile Game Development
 //  Game 2014 Assignment 1
 //  Run Princess, Run! By Sophia Kovalenko - 101333565
@@ -6,8 +6,9 @@
 //
 //  Created: October 2nd, 2022
 //  Last modified: October 22th, 2022
-//////////////////////////////////////////////////////////////////////////////////////////////////////////
-
+//  - this script is responsible for navigation between scenes on button clicks and via the game conditions
+//  - added the changeLevelOne and changeLevelTwo functions to control win conditions 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 using System.Collections;
 using System.Collections.Generic;
@@ -26,18 +27,21 @@ public class SceneNavigator : MonoBehaviour
 
     public void Update()
     {
+        // if player dies, load game over scene
         if (GameManager.Instance.IsPlayerDead == true)
         {
             SceneManager.LoadScene("GameLostScreen");
         }
 
-        if (TimeKeeper.totalTime >= 120.0f && TimeKeeper.isCurrentLevel2 == false)
+        // if the player's game time is 90 seconds and they are in the first level, change to level completed scene
+        if (TimeKeeper.totalTime >= 90.0f && TimeKeeper.isCurrentLevel2 == false)
         {
             ChangeLevelOne();
             TimeKeeper.isCurrentLevel2 = true;
         }
 
-        if (TimeKeeper.totalTime >= 180.0f && TimeKeeper.isCurrentLevel2 == true)
+        // if the players game time is 2 minutes and they are in the second level, the game is won & change to game won scene
+        if (TimeKeeper.totalTime >= 120.0f && TimeKeeper.isCurrentLevel2 == true)
         {
 
             ChangeLevelTwo();

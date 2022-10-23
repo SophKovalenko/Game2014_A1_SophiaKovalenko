@@ -6,6 +6,7 @@
 //
 //  Created: October 22nd, 2022
 //  Last modified: October 22nd, 2022
+//  - this script stores the variables needed for the levels cleared scenes
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 using System.Collections;

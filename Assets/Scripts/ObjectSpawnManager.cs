@@ -5,7 +5,8 @@
 //  This program contains the scripts for a simple mobile game still in development.
 //
 //  Created: October 16th, 2022
-//  Last modified: October 21th, 2022
+//  Last modified: October 23th, 2022
+//  - this script randomly spawns all of the objects in the scene excluding the enemies
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 using System.Collections;
@@ -24,7 +25,7 @@ public class ObjectSpawnManager : MonoBehaviour
 
     public GameObject[] hazardPrefabs;
     private float intervalOfHazardSpawn = 3.0f;
-    private float delayOfHazardSpawn = 1.0f;
+    private float delayOfHazardSpawn = 0.5f;
 
     public float horizonalLocation = 11.0f;
     public Boundary boundary;

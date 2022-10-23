@@ -122,7 +122,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a1ffba441b8e8549b722109fd6f3130, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollSpeed: 3
 --- !u!61 &3012386313801973575
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -191,6 +190,7 @@ MonoBehaviour:
   screenBounds:
     minBoundary: -10
     maxBoundary: 10
+  playerReference: {fileID: 7346684431822518386, guid: fc9347b2e67584040b5f69c4c26681c9, type: 3}
   bulletSpawnPoint: {fileID: 0}
   enemyCanShoot: 0
   fireEnemyBullet: {fileID: 8300000, guid: eb027cebf77befb41beeb66d9efacc69, type: 3}

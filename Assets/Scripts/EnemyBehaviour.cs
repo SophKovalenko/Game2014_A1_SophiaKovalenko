@@ -5,7 +5,10 @@
 //  This program contains the scripts for a simple mobile game still in development.
 //
 //  Created: October 20th, 2022
-//  Last modified: October 20th, 2022
+//  Last modified: October 23th, 2022
+//  - this script controls the enemy movement after they are spawned and controls their reset on death
+//  - created player reference so enemies can track the player in the scene
+//  - enemies use MoveTo function to seek out the player and move towards their location in real time
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 using System.Collections;
@@ -20,6 +23,8 @@ public class EnemyBehaviour : MonoBehaviour
     public Boundary screenBounds;
     private float horizontalSpeed;
     private float verticalSpeed;
+  
+    private GameObject playerReference;
 
     [Header("Bullet Properties")]
     public Transform bulletSpawnPoint;
@@ -39,6 +44,9 @@ public class EnemyBehaviour : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         bulletManager = FindObjectOfType<BulletManager>();
         enemyAudio = GetComponent<AudioSource>();
+
+        //Used to find reference to the player in the scene
+        playerReference = GameObject.FindGameObjectWithTag("Player");
 
         ResetEnemy();
 
@@ -64,8 +72,8 @@ public class EnemyBehaviour : MonoBehaviour
 
     void Move()
     {
-        var boundaryLength = verticalBoundary.maxBoundary - verticalBoundary.minBoundary;
-        transform.position = new Vector3(transform.position.x - horizontalSpeed * Time.deltaTime, Mathf.PingPong(Time.time * verticalSpeed, boundaryLength) - verticalBoundary.maxBoundary, 0.0f);
+        //Seek the player's position while moving to the left at a random speed within the range
+        transform.position = Vector2.MoveTowards(transform.position, playerReference.transform.position, Random.Range(2.0f, 5.0f) * Time.deltaTime);
     }
 
     public void CheckBounds()
@@ -80,8 +88,6 @@ public class EnemyBehaviour : MonoBehaviour
     {
         var RandomXPosition = Random.Range(horizontalBoundary.minBoundary, horizontalBoundary.maxBoundary);
         var RandomYPosition = Random.Range(verticalBoundary.minBoundary, verticalBoundary.maxBoundary);
-        horizontalSpeed = Random.Range(0.5f, 2.0f);
-        verticalSpeed = Random.Range(0.5f, 5.0f);
         transform.position = new Vector3(11.0f, RandomYPosition, 0.0f);
     }
 

@@ -6,6 +6,8 @@
 //
 //  Created: October 2nd, 2022
 //  Last modified: October 22nd, 2022
+// - this script manages the game info related to player lives
+// - stores important bools needed for player behaviour in each level
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 using System.Collections;

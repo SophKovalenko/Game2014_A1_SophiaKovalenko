@@ -6,6 +6,7 @@
 //
 //  Created: October 20th, 2022
 //  Last modified: October 20th, 2022
+//  - this script stores the types of bullets that can exist in the scene
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 using System.Collections;

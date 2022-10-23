@@ -5,7 +5,9 @@
 //  This program contains the scripts for a simple mobile game still in development.
 //
 //  Created: October 16th, 2022
-//  Last modified: October 16th, 2022
+//  Last modified: October 18th, 2022
+//  - this script moves the spawnable objects in the scene (excluding enemies) to the left
+//  - added implementation of HasPlayerSpedUp bool to control the horse powerup
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 using System.Collections;

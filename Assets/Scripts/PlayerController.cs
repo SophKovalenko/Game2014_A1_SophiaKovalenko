@@ -5,7 +5,9 @@
 //  This program contains the scripts for a simple mobile game still in development.
 //
 //  Created: October 16th, 2022
-//  Last modified: October 20th, 2022
+//  Last modified: October 22th, 2022
+//  - this script controls the player's touch input
+//  - stores all of the onTrigger events related to player pickups and damage by enemies via object tags
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 using System.Collections;

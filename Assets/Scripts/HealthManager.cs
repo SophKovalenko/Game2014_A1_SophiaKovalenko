@@ -6,6 +6,7 @@
 //
 //  Created: October 21st, 2022
 //  Last modified: October 21st, 2022
+//  - this script controls the health icons displayed in the game scene based on the players lives
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 using System.Collections;

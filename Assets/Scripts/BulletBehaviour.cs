@@ -6,6 +6,8 @@
 //
 //  Created: October 20th, 2022
 //  Last modified: October 20th, 2022
+// - this script controls the behaviour of the bullets spawned on the screen
+// - score is incremented when player bullet hits enemy
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 using System.Collections;

@@ -6,6 +6,7 @@
 //
 //  Created: October 16th, 2022
 //  Last modified: October 16th, 2022
+//  - this script controls the boundaries of the game world
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 using System.Collections;

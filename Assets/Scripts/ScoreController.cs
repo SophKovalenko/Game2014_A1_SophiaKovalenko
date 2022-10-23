@@ -6,6 +6,7 @@
 //
 //  Created: October 22nd, 2022
 //  Last modified: October 22th, 2022
+//  - this script displays the players score on screen via text
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 using System.Collections;
